@@ -5,25 +5,49 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/david.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 <style>
 h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}
 body {font-family: "Open Sans"}
+@font-face {
+  font-family: myfont;
+  src: url(css/Blazed.ttf);
+}
+@font-face {
+  font-family: font;
+  src: url(css/Speedway.ttf);
+}
+@font-face {
+  font-family: log;
+  src: url(css/INFECTED.ttf);
+}
+@font-face {
+  font-family: name;
+  src: url(css/Overwave.ttf);
+}
+
 </style>
 </head>
 <body class="david-light-grey">
 
 <!-- Navigation bar with social media icons -->
-<div class="david-bar david-black david-hide-small">
-  <a href="#" class="david-bar-item david-button"><i class="fa fa-facebook-official"></i></a>
-  <a href="#" class="david-bar-item david-button"><i class="fa fa-instagram"></i></a>
-  <a href="#" class="david-bar-item david-button"><i class="fa fa-snapchat"></i></a>
-  <a href="#" class="david-bar-item david-button"><i class="fa fa-flickr"></i></a>
-  <a href="#" class="david-bar-item david-button"><i class="fa fa-twitter"></i></a>
-  <a href="#" class="david-bar-item david-button"><i class="fa fa-linkedin"></i></a>
-  <a href="#" class="david-bar-item david-button david-right"><i class="fa fa-search"></i></a>
+<div class="mx-auto david-bar david-black david-hide-small">
+  <nav class="">
+    <i class="fa fa-instagram david-hover-opacity" class="david-bar-item david-button"id="instagram"onclick="goInstagramProfile()"></i>
+    <i class="bi bi-threads-fill david-hover-opacity" class=" david-bar-item david-button" id="thread"></i>
+    <i class="bi bi-tiktok david-hover-opacity" class="david-bar-item david-button" id="tik "onclick="goToTikTokProfile()"></i>
+    <i class="bi bi-youtube david-hover-opacity" class="david-bar-item david-button" onclick="openProfile()" ></i>
+    <i class="bi bi-telegram david-hover-opacity" class="david-bar-item david-button" onclick="sendSMS() " ></i>
+    
+  </nav>
+  
+  
 </div>
   
 <!-- w3-content defines a container for fixed size centered content, 
@@ -32,16 +56,16 @@ and is wrapped around the whole page content, except for the footer in this exam
 
   <!-- Header -->
   <header class="david-container david-center david-padding-48 david-white ">
-    <h1 class="david-xxxlarge" style="margin-left: 40%;"><b>Hustle Boy</b></h1>
-    <h6  style="margin-left: 37%;">Welcome to the blog of <span class="david-tag">Rammy Multi-Ultra Designer</span></h6>
+    <h1 class="david-xxxlarge" style="margin-left: 40%; "><b style="font-family:myfont; color: orangered;">Hustle Boy</b></h1>
+    <h6  style="margin-left: 37%;"><span class=" fs-2 " style="font-family:font; color: blue;">RAMMY MULTI-ULTRA DESIGNERS</span></h6>
   </header>
 
   <!-- Image header -->
   <header class="david-display-container david-wide" id="home">
     <img class="david-image" src="images/pc8.jpg"  width="1600" height="1060" >
     <div class="david-display-left david-padding-large">
-      <h1 class="david-text-white">Ramadhan</h1>
-      <h1 class="david-jumbo david-text-white david-hide-small"><b>MULTI-ULTRA DESIGNERS BLOG</b></h1>
+      <h1 class="david-text-white" style="font-family: name;">Ramadhan</h1>
+      <h1 class="david-jumbo david-text-white david-hide-small"><b style="font-family: log; color: black;">MULTI-ULTRA DESIGNERS BLOG</b></h1>
       <h6><button class="david-button david-grey  david-padding-large david-large david-opacity david-hover-opacity-off" onclick="document.getElementById('subscribe').style.display='block'">SUBSCRIBE</button></h6>
     </div>
   </header>
@@ -272,9 +296,11 @@ and is wrapped around the whole page content, except for the footer in this exam
           <h4>Follow Me</h4>
         </div>
         <div class="david-container david-xlarge david-padding">
-          <i class="fa fa-facebook-official david-hover-opacity"></i>
-          <i class="fa fa-instagram david-hover-opacity"></i>
-          <i class="fa fa-twitter david-hover-opacity"></i>
+          <i class="fa fa-instagram david-hover-opacity" id="instagram"onclick="goInstagramProfile()"></i>
+          <i class="bi bi-threads-fill david-hover-opacity" id="thread"></i>
+          <i class="bi bi-tiktok david-hover-opacity" id="tik "onclick="goToTikTokProfile()"></i>
+          <i class="bi bi-youtube david-hover-opacity" onclick="openProfile()" ></i>
+          <i class="bi bi-telegram david-hover-opacity" onclick="sendSMS() " ></i>
           
         </div>
       </div>
@@ -288,7 +314,7 @@ and is wrapped around the whole page content, except for the footer in this exam
         <div class="david-container david-white">
           <p>send text via whatsapp</p>
           <p><input class="david-input david-border" type="text" placeholder="enter some text" style="width:100%"></p>
-          <p> <a href="https://wa.me/+255746006091" class="david-display-none"><button type="button" class="david-button david-block david-red">Send</button></a></p>
+          <p><button type="button"  onclick="sendSMS()" class="david-button david-block david-red">Send</button></p>
         </div>
       </div>
 
@@ -300,3 +326,31 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 <!-- END w3-content -->
 </div>
+<!---js-->
+<script>
+  //send via whatsapp
+  function sendSMS() {
+     var phoneNumber = "+255746006091";
+     var message = "Hello from your website!";
+     var apiURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
+     window.open(apiURL, '_blank');
+  }
+  //social media //instagram
+  function goInstagramProfile(){
+ window.open('https://www.instagram.com/@hustlerboy35/', '_blank');
+};
+//thread
+document.getElementById("thread").onclick = function () {
+ window.open('https://www.thread.com/@hustlerboy35/', '_blank');
+};
+//tiktok
+function goToTikTokProfile() {
+            // Replace 'your-username' with your actual TikTok username
+            window.open('https://www.tiktok.com/@hustlerboy002', '_blank');
+        }
+        function openProfile() {
+    window.open("https://www.youtube.com/@multi-ultracompany1/", "_blank");
+ }
+
+
+ </script>
